@@ -12,23 +12,6 @@ class WeatherTest extends TestCase
 {
     public function testGetWeather()
     {
-        // json
-        $response = new Response(200, [], '{"success": true}');
-        $client = \Mockery::mock(Client::class);
-        $client->allows()->get('https://restapi.amap.com/v3/weather/weatherInfo', [
-            'query' => [
-                'key' => 'mock-key',
-                'city' => '深圳',
-                'output' => 'json',
-                'extensions' => 'base',
-            ],
-        ])->andReturn($response);
-
-        $w = \Mockery::mock(Weather::class, ['mock-key'])->makePartial();
-        $w->allows()->getHttpClient()->andReturn($client);
-        $this->assertSame(['success' => true], $w->getWeather('深圳'));
-
-
         // xml
         $response = new Response(200, [], '<hello>content</hello>');
         $client = \Mockery::mock(Client::class);
