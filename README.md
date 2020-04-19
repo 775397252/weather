@@ -1,7 +1,7 @@
 <h1 align="center"> weather </h1>
 
 <p align="center"> ....</p>
-
+[![Build Status](https://travis-ci.org/775397252/weather.svg?branch=master)](https://travis-ci.org/775397252/weather)
 
 ## Installing
 
